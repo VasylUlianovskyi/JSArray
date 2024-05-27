@@ -1,0 +1,57 @@
+.card-list {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 30px;
+  justify-content: center;
+
+}
+
+.phone-img {
+  width: 200px;
+  padding: 10px;
+  justify-self: center;
+
+
+
+}
+
+.phone-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, .12, .18);
+  overflow: hidden;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.discriprion {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: rgb(142, 184, 178);
+  font-size: 15px;
+  margin-top: auto;
+  align-self: flex-end;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  background: rgb(155, 248, 236);
+  color: rgb(0, 91, 170);
+}

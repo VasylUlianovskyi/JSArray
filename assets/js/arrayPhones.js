@@ -142,3 +142,18 @@ function midllePrice(arr) {
 }
 
 console.log("Cередня ціна телефона:", midllePrice(phones), "$");
+
+// - *Знайти кількість телефонів з RAM 4, 6, 8, 12 ГБ (можна спробувати накопичити дані в об'єкт вигляду: ключ - обсяг RAM, значення - кількість телефонів з цим обсягом RAM).
+
+const phoneWithRam = (ram) => {
+  const filterPhones = phones.filter((phone) => phone.RAM === ram);
+  if (filterPhones.length === 0) {
+    return "Телефонів з таким об'ємом RAM не виявлено";
+  }
+  return filterPhones;
+};
+
+console.log("Телефонів з об'ємом RAM 4:", phoneWithRam(4));
+console.log("Телефонів з об'ємом RAM 6:", phoneWithRam(6));
+console.log("Телефонів з об'ємом RAM 8:", phoneWithRam(8));
+console.log("Телефонів з об'ємом RAM 12:", phoneWithRam(12));

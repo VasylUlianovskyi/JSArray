@@ -141,7 +141,7 @@ function midllePrice(arr) {
   return sum / arr.length;
 }
 
-console.log("Cередня ціна телефона:", midllePrice(phones), "$");
+console.log("Cередня ціна телефона:", midllePrice(phones).toFixed(), "$");
 
 // - *Знайти кількість телефонів з RAM 4, 6, 8, 12 ГБ (можна спробувати накопичити дані в об'єкт вигляду: ключ - обсяг RAM, значення - кількість телефонів з цим обсягом RAM).
 

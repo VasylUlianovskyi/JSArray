@@ -42,12 +42,12 @@ console.log(numbersMult(numbers));
 // Методи перебору масивів (forEach, filter, map, findIndex, *some, *every).
 // 8 Отримати новий масив із заданого, який міститиме лише ненульові числа (-1, 5, 0, 9, -10 => -1, 5, 9, -10). // filter
 
-const possitiveNumbers = numbers.filter((number) => number >= 0);
+const possitiveNumbers = numbers.filter((number) => number !== 0);
 console.log(possitiveNumbers);
 
 // 9 Отримати новий масив їх заданого, який міститиме всі елементи вихідного, поділені на 100 (99, 5, 0, 9, 30 => 0.99, 0.05, 0, 0.09, 0.3). // map
 
-const numbersMultipy100 = numbers.map((number) => number * 100);
+const numbersMultipy100 = numbers.map((number) => number / 100);
 console.log(numbersMultipy100);
 
 // 10 Вивести елементи масиву, зведені у куб. // forEach
@@ -65,16 +65,32 @@ console.log(numbersCubed);
 const numbersSquared100 = numbers.findIndex(
   (number) => number * number === 100
 );
-console.log(numbersSquared100);
-numbers.splice(5, 1);
-console.log(numbers);
+
+if (numbersSquared100 !== -1) {
+  console.log(numbersSquared100);
+  numbers.splice(5, 1);
+  console.log(numbers);
+} else {
+  console.log("Елемент, квадрат якого дорівнює 100, не існує.");
+}
 
 // 12 *Перевірити, чи всі елементи масиву є парними числами (* або простими числами). // every
 
-const isSimpleNumbers = numbers.every(
-  (number) => number % number === 0 && number % 1 === 0
-);
-console.log(isSimpleNumbers);
+const isSimpleNumbers = (numbers) => {
+  return numbers.every((number) => {
+    if (number <= 1) {
+      return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  });
+};
+console.log(isSimpleNumbers(numbers));
 
 //13 *Перевірити, чи є у масиві бодай один від'ємний елемент. // some
 

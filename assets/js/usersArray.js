@@ -33,7 +33,7 @@ User.prototype.getFullName = function () {
 
 // Отримати масив користувачів, які не підписані (not subscribed).
 
-const notSubscribedUsers = users.filter((user) => user.isSubscribed === false);
+const notSubscribedUsers = users.filter((user) => !user.isSubscribed);
 console.table(notSubscribedUsers);
 
 // Вивести список повних імен користувачів.
@@ -45,7 +45,7 @@ users.forEach((user) => {
 // Отримати масив повних імен осіб жіночої статі шкільного віку (6 – 18 років).
 
 const schoolAgeGirlArray = users.filter(
-  (user) => user.isMale === false && user.age >= 6 && user.age <= 18
+  (user) => !user.isMale && user.age >= 6 && user.age <= 18
 );
 if (schoolAgeGirlArray.length === 0) {
   console.log("Відповдних данних в масиві немає");
@@ -73,7 +73,7 @@ console.log(changeEmail);
 
 // *Визначити, який відсоток користувачів підписані (subscribed).
 
-const subscribedUsers = users.filter((user) => user.isSubscribed === true);
+const subscribedUsers = users.filter((user) => user.isSubscribed);
 
 const percentageSigned = (subscribedUsers.length / users.length) * 100;
 console.log("Відсоток підписаних користувачів складає:", percentageSigned, "%");
@@ -102,10 +102,10 @@ console.table(sortAge);
 const isEmailExist = users.some(
   (user) => user.email === "useremail7@gmail.com"
 );
-console.log("Є користувач з мейлом ...:", isEmailExist);
+console.log("Є користувач з мейлом ...?:", isEmailExist);
 
 // *Перевірити, чи всі користувачі підписані (subscribed).
 
-const isAllSubscribed = users.every((user) => user.isSubscribed === true);
+const isAllSubscribed = users.every((user) => user.isSubscribed);
 
 console.log("Чи всі користувачі підписані", isAllSubscribed);

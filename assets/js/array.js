@@ -76,21 +76,21 @@ if (numbersSquared100 !== -1) {
 
 // 12 *Перевірити, чи всі елементи масиву є парними числами (* або простими числами). // every
 
-const isSimpleNumbers = (numbers) => {
-  return numbers.every((number) => {
-    if (number <= 1) {
+function isNumbersSimple(number) {
+  if (number <= 1) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
       return false;
     }
+  }
+  return true;
+}
 
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-      if (number % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  });
-};
-console.log(isSimpleNumbers(numbers));
+const isSimpleNumbers = numbers.every(isNumbersSimple);
+console.log(isSimpleNumbers);
 
 //13 *Перевірити, чи є у масиві бодай один від'ємний елемент. // some
 
